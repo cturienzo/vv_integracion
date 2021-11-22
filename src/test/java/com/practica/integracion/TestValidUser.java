@@ -2,6 +2,7 @@ package com.practica.integracion;
 
 import com.practica.integracion.DAO.AuthDAO;
 import com.practica.integracion.DAO.User;
+import com.practica.integracion.manager.SystemManager;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Spy;
@@ -14,6 +15,6 @@ public class TestValidUser {
 	private User user;
 
 	@Spy
-	private AuthDAO auth;
+	private SystemManager systemManager;
 
 }
