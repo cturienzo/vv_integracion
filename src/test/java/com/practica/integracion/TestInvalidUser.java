@@ -1,6 +1,7 @@
 package com.practica.integracion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,7 +55,7 @@ public class TestInvalidUser {
 		  
 		  // llamada al api a probar
 		  Collection<Object> retorno = manager.startRemoteSystem(invalidUser.getId(), validId);
-		  assertEquals(retorno.toString(), "[]");
+		  assertThrows();
 		  
 		  // vemos si se ejecutan las llamadas a los dao, y en el orden correcto
 		  ordered.verify(mockAuthDao).getAuthData(invalidUser.getId());
