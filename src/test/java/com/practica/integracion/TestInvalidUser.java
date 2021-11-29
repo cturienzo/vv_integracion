@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InOrder;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.when;
@@ -18,10 +20,13 @@ import com.practica.integracion.DAO.AuthDAO;
 import com.practica.integracion.DAO.GenericDAO;
 import com.practica.integracion.DAO.User;
 import com.practica.integracion.manager.SystemManager;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 
 @ExtendWith(MockitoExtension.class)
+@MockitoSettings(strictness = Strictness.LENIENT)
 public class TestInvalidUser {
-	
+
 	@Mock
 	private static AuthDAO mockAuthDao;
 	
