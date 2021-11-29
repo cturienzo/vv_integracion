@@ -21,41 +21,41 @@ public class TestValidUser {
 	private static GenericDAO mockGenericDao;
 
 	@Test
-	public void startRemoteSystemValidSystem(String userId, String remoteId){
+	public void testStartRemoteSystemValidSystem() throws Exception{
 		
 	}
 	
 	@Test
-	public void stopRemoteSystemValidSystem(String userId, String remoteId) {
+	public void testStopRemoteSystemValidSystem()  throws Exception{
 		
 	}
 	@Test
-	public void addRemoteSystemValidSystem(String userId, Object remote) {
+	public void testAddRemoteSystemValidSystem()  throws Exception{
 		
 	}
 	
 	@Test
-	public void deleteRemoteSystemValidSystem(String userId, String remoteId) {
+	public void testDeleteRemoteSystemValidSystem()  throws Exception{
 		
 	}
 	
 
 	@Test
-	public void startRemoteSystemInvalidSystem(String userId, String remoteId){
+	public void testStartRemoteSystemInvalidSystem() throws Exception{
 		
 	}
 	
 	@Test
-	public void stopRemoteSystemInvalidSystem(String userId, String remoteId) {
+	public void testStopRemoteSystemInvalidSystem()  throws Exception{
 		
 	}
 	@Test
-	public void addRemoteSystemInvalidSystem(String userId, Object remote) {
+	public void testAddRemoteSystemInvalidSystem()  throws Exception{
 		
 	}
 	
 	@Test
-	public void deleteRemoteSystemInvalidSystem(String userId, String remoteId) {
+	public void testDeleteRemoteSystemInvalidSystem()  throws Exception{
 		
 	}
 
