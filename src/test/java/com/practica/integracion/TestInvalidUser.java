@@ -19,41 +19,41 @@ public class TestInvalidUser {
 	
 	
 	@Test
-	public void startRemoteSystemValidSystem(String userId, String remoteId){
+	public void startRemoteSystemValidSystem() throws Exception{
 		
 	}
 	
 	@Test
-	public void stopRemoteSystemValidSystem(String userId, String remoteId) {
+	public void stopRemoteSystemValidSystem() throws Exception{
 		
 	}
 	@Test
-	public void addRemoteSystemValidSystem(String userId, Object remote) {
+	public void addRemoteSystemValidSystem() throws Exception{
 		
 	}
 	
 	@Test
-	public void deleteRemoteSystemValidSystem(String userId, String remoteId) {
+	public void deleteRemoteSystemValidSystem() throws Exception{
 		
 	}
 	
 
 	@Test
-	public void startRemoteSystemInvalidSystem(String userId, String remoteId){
+	public void startRemoteSystemInvalidSystem() throws Exception{
 		
 	}
 	
 	@Test
-	public void stopRemoteSystemInvalidSystem(String userId, String remoteId) {
+	public void stopRemoteSystemInvalidSystem() throws Exception{
 		
 	}
 	@Test
-	public void addRemoteSystemInvalidSystem(String userId, Object remote) {
+	public void addRemoteSystemInvalidSystem() throws Exception{
 		
 	}
 	
 	@Test
-	public void deleteRemoteSystemInvalidSystem(String userId, String remoteId) {
+	public void deleteRemoteSystemInvalidSystem() throws Exception{
 		
 	}
 }
