@@ -101,8 +101,29 @@ public class TestValidUser {
 		
 	}
 	
-	@Test
+	@Test 
+	// El test falla porque en el metodo deleteRemoteSystem(), 
+	// hay un usuario prefijado y no se puede autenticar al 
+	//	usuario que se pasa por argumento
 	public void testDeleteRemoteSystemValidSystem()  throws Exception{
+	
+		User validUser = new User("1","Ana","Lopez","Madrid", (List<Object>) new ArrayList<Object>(Arrays.asList(1, 2)));  
+
+		String idValido = "12345";
+		when(mockGenericDao.deleteSomeData(validUser, idValido)).thenReturn(true);
+		  
+		// primero debe ejecutarse la llamada al dao de autenticación
+		// despues el de  acceso a datos del sistema (la validaciones del orden en cada prueba)
+		InOrder ordered = inOrder(mockGenericDao);
+		  
+		// instanciamos el manager con los mock creados
+		SystemManager manager = new SystemManager(mockAuthDao, mockGenericDao);
+		  
+		manager.deleteRemoteSystem(validUser.getId(), idValido);
+		  
+		// vemos si se ejecutan las llamadas a los dao, y en el orden correcto
+		ordered.verify(mockGenericDao, times(1)).deleteSomeData(validUser, idValido);
+		  
 		
 	}
 	
