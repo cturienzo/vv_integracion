@@ -33,7 +33,7 @@ Antes que nada se deben tener instalado tanto el gestor de dependencias Maven co
 
 ### 1º Clonar el repositorio remoto en uno local
 
-    https://github.com/robertomancebom/vv_caja_blanca.git
+    https://github.com/cturienzo/vv_integracion.git
     
 ### 2º Ejecutar mvn clean
 ### 3º Ejecutar mvn test
