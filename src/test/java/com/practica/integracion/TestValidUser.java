@@ -119,7 +119,7 @@ public class TestValidUser {
 		  
 		// primero debe ejecutarse la llamada al dao de autenticación
 		// despues el de  acceso a datos del sistema (la validaciones del orden en cada prueba)
-		InOrder ordered = inOrder(mockGenericDao);
+		InOrder ordered = inOrder(mockAuthDao,mockGenericDao);
 		  
 		// instanciamos el manager con los mock creados
 		SystemManager manager = new SystemManager(mockAuthDao, mockGenericDao);
@@ -201,9 +201,10 @@ public class TestValidUser {
 		// instanciamos el manager con los mock creados
 		  SystemManager manager = new SystemManager(mockAuthDao, mockGenericDao);
 		  
-		  assertThrows(SystemManagerException.class, () -> {
-			  manager.addRemoteSystem(validUser.getId(), objetoInvalido);
-		  });		  
+		  SystemManagerException ex = assertThrows(SystemManagerException.class, () -> {
+			  							manager.addRemoteSystem(validUser.getId(), objetoInvalido);
+		  							});		  
+		  assertEquals("cannot add remote",ex.getMessage());
 		  
 		  // vemos si se ejecutan las llamadas a los dao, y en el orden correcto
 		  ordered.verify(mockAuthDao, times(1)).getAuthData(validUser.getId());
@@ -222,15 +223,16 @@ public class TestValidUser {
 		  
 		// primero debe ejecutarse la llamada al dao de autenticación
 		// despues el de  acceso a datos del sistema (la validaciones del orden en cada prueba)
-		InOrder ordered = inOrder(mockGenericDao);
+		InOrder ordered = inOrder(mockAuthDao, mockGenericDao);
 		  
 		// instanciamos el manager con los mock creados
 		SystemManager manager = new SystemManager(mockAuthDao, mockGenericDao);
 		
-		assertThrows(SystemManagerException.class, () -> {
+		SystemManagerException ex = assertThrows(SystemManagerException.class, () -> {
 			  manager.deleteRemoteSystem(validUser.getId(), idInvalido);
 		  });		 
-		  
+		assertEquals("cannot delete remote: does remote exists?", ex.getMessage());
+
 		// vemos si se ejecutan las llamadas a los dao, y en el orden correcto
 		ordered.verify(mockAuthDao, times(1)).getAuthData(validUser.getId());
 		ordered.verify(mockGenericDao, times(1)).deleteSomeData(validUser, idInvalido);
