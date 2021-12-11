@@ -99,8 +99,8 @@ public class TestValidUser {
 		  manager.addRemoteSystem(validUser.getId(), objetoValido);
 		  
 		  // vemos si se ejecutan las llamadas a los dao, y en el orden correcto
-		  ordered.verify(mockAuthDao).getAuthData(validUser.getId());
-		  ordered.verify(mockGenericDao).updateSomeData(validUser, objetoValido);
+		  ordered.verify(mockAuthDao, times(1)).getAuthData(validUser.getId());
+		  ordered.verify(mockGenericDao, times(1)).updateSomeData(validUser, objetoValido);
 		  
 		
 	}
@@ -127,6 +127,7 @@ public class TestValidUser {
 		manager.deleteRemoteSystem(validUser.getId(), idValido);
 		  
 		// vemos si se ejecutan las llamadas a los dao, y en el orden correcto
+		ordered.verify(mockAuthDao, times(1)).getAuthData(validUser.getId());
 		ordered.verify(mockGenericDao, times(1)).deleteSomeData(validUser, idValido);
 		  
 		
@@ -231,6 +232,7 @@ public class TestValidUser {
 		  });		 
 		  
 		// vemos si se ejecutan las llamadas a los dao, y en el orden correcto
+		ordered.verify(mockAuthDao, times(1)).getAuthData(validUser.getId());
 		ordered.verify(mockGenericDao, times(1)).deleteSomeData(validUser, idInvalido);
 	}
 
