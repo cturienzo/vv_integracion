@@ -23,7 +23,7 @@ Para ejecutar las pruebas tenemos dos opciones:
 <img alt="captura 3" src="./images/captura3.jpg?raw=true" />
 *Si en algún momento falla el Maven install, se debe ejecutar Maven clean (para limpiar los resultados de compilaciones anteriores) y después Maven install de nuevo.
 
-### 4º Una vez se han instalado correctamente las librerías de JUnit y SingleLinkedList, se pueden ejecutar los test de la carpeta *src/test/java* con la opción **Run As > JUnit Test**
+### 4º Una vez se han instalado correctamente las librerías de JUnit y Mockito, se pueden ejecutar los test de la carpeta *src/test/java* con la opción **Run As > JUnit Test**
 
 ## Con la terminal
 
